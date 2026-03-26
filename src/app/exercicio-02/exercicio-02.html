@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Descontos</title>
+    <link rel="stylesheet" href="exercicio-02.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Sistema de Descontos</h2>
+        
+        <label>Valor Total da Compra (R$):</label>
+        <input type="number" id="amount" placeholder="Digite o valor..." step="0.01">
+
+        <button onclick="handleDiscount()">Aplicar Desconto</button>
+
+        <div id="result" class="result"></div>
+        
+        <div class="info">
+            <small>* Até R$ 100: 0% | Até R$ 500: 10% | + R$ 500: 20%</small>
+        </div>
+    </div>
+
+    <script src="exercicio-02.js"></script>
+    <script>
+        function handleDiscount() {
+            const input = document.getElementById('amount').value;
+            const display = document.getElementById('result');
+
+            if (input === "") {
+                display.innerHTML = "Por favor, insira um valor.";
+                return;
+            }
+
+            try {
+                // O input type="number" retorna string, precisamos converter para número
+                const val = Number(input);
+                const res = calculateDiscount(val);
+                
+                display.innerHTML = `Valor Final: <strong>R$ ${res.toFixed(2)}</strong>`;
+                display.style.color = "#27ae60";
+            } catch (error) {
+                display.innerHTML = `Erro: ${error.message}`;
+                display.style.color = "#e74c3c";
+            }
+        }
+    </script>
+</body>
+</html>

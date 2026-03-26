@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Preço de Venda</title>
+    <link rel="stylesheet" href="exercicio-01.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Exercício 01: Precificação</h2>
+        
+        <label>Custo do Produto (R$):</label>
+        <input type="number" id="cost" placeholder="Ex: 100">
+
+        <label>Margem de Lucro (%):</label>
+        <input type="number" id="profit" placeholder="Ex: 20">
+
+        <button onclick="handleCalculation()">Calcular Valor Final</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="exercicio-01.js"></script>
+    <script>
+        function handleCalculation() {
+            const cost = document.getElementById('cost').value;
+            const profit = document.getElementById('profit').value;
+            const display = document.getElementById('result');
+
+            try {
+             
+                const res = calculateFinalPrice(Number(cost), Number(profit));
+                display.innerHTML = `Preço Final: <strong>R$ ${res.toFixed(2)}</strong>`;
+                display.style.color = "#2c3e50";
+            } catch (error) {
+                display.innerHTML = `Erro: ${error.message}`;
+                display.style.color = "#e74c3c";
+            }
+        }
+    </script>
+</body>
+</html>
