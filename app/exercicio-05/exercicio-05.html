@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de ROI</title>
+    <link rel="stylesheet" href="exercicio-05.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cálculo de ROI</h2>
+        <p class="description">Retorno sobre Investimento</p>
+        
+        <form id="roi-form">
+            <div class="input-group">
+                <label for="investment">Valor Investido (R$):</label>
+                <input type="number" id="investment" step="0.01" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="revenue">Receita Obtida (R$):</label>
+                <input type="number" id="revenue" step="0.01" required>
+            </div>
+            
+            <button type="submit">Calcular ROI</button>
+        </form>
+
+        <div id="result-container" class="hidden">
+            <p>Seu ROI é de: <strong id="roi-result"></strong></p>
+        </div>
+        <div id="error-container" class="hidden error">
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <script src="exercicio-05.js"></script>
+</body>
+</html>
