@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Lucro Líquido</title>
+    <link rel="stylesheet" href="exercicio-04.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cálculo de Lucro Líquido</h2>
+        <form id="profit-form">
+            <div class="input-group">
+                <label for="sale-price">Preço de Venda (R$):</label>
+                <input type="number" id="sale-price" step="0.01" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="product-cost">Custo do Produto (R$):</label>
+                <input type="number" id="product-cost" step="0.01" required>
+            </div>
+
+            <div class="input-group">
+                <label for="operational-costs">Custos Operacionais (R$):</label>
+                <input type="number" id="operational-costs" step="0.01" required>
+            </div>
+            
+            <button type="submit">Calcular Lucro</button>
+        </form>
+
+        <div id="result-container" class="hidden">
+            <p>Resultado: <strong id="profit-result"></strong></p>
+        </div>
+        <div id="error-container" class="hidden error">
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <script src="exercicio-04.js"></script>
+</body>
+</html>
